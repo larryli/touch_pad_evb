@@ -1,0 +1,36 @@
+# Use: "docker-compose run --rm v4.2 idf.py build"
+version: "3.5"
+
+x-services-volume: &services-volume
+    volumes:
+        - .:/project
+    working_dir: /project
+
+services:
+    latest:
+        image: "espressif/idf:latest"
+        <<: *services-volume
+    release-v4.0:
+        image: "espressif/idf:release-v4.0"
+        <<: *services-volume
+    release-v4.1:
+        image: "espressif/idf:release-v4.1"
+        <<: *services-volume
+    release-v4.2:
+        image: "espressif/idf:release-v4.2"
+        <<: *services-volume
+    release-v4.3:
+        image: "espressif/idf:release-v4.3"
+        <<: *services-volume
+    v4.0.2:
+        image: "espressif/idf:v4.0.2"
+        <<: *services-volume
+    v4.1:
+        image: "espressif/idf:v4.1"
+        <<: *services-volume
+    v4.1.1:
+        image: "espressif/idf:v4.1.1"
+        <<: *services-volume
+    v4.2:
+        image: "espressif/idf:v4.2"
+        <<: *services-volume
